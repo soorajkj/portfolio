@@ -1,0 +1,54 @@
+{
+  "name": "devfolio",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "yarn": ">=1.22.17",
+    "node": ">=18.18.2",
+    "npm": "please-use-yarn"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ignore-path .gitignore --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ignore-path .gitignore --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,ts,tsx,css,scss,md,json}\"",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-visually-hidden": "^1.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^10.0.1",
+    "next": "^14.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^11.0.6",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^18.14.6",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.35.0",
+    "eslint-config-next": "^14.0.2",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.2",
+    "postcss": "^8.4.33",
+    "prettier": "^2.8.2",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "sass": "^1.58.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^4.9.5"
+  }
+}

@@ -1,6 +1,6 @@
-import React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cx } from "@lib/utils";
+import * as React from "react";
+import { cva, VariantProps } from "class-variance-authority";
+import { classnames } from "@/utils/classnames";
 
 interface ContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -10,10 +10,17 @@ export default function Container(props: ContainerProps) {
   const { children, className, ...rest } = props;
 
   return (
-    <div className={cx(ContainerStyles({ className }))} {...rest}>
+    <div className={classnames(ContainerStyles({ className }))} {...rest}>
       {children}
     </div>
   );
 }
 
-const ContainerStyles = cva(["container"]);
+const ContainerStyles = cva([
+  "container",
+  "relative",
+  "max-w-screen-2xl",
+  "w-full",
+  "px-4",
+  "mx-auto",
+]);

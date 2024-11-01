@@ -1,20 +1,25 @@
 import React, { forwardRef } from "react";
 import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
-import { icons } from "@constants/icons";
+import { icons as lucideIcons, LucideProps } from "lucide-react";
 
-export interface IconProps extends React.SVGAttributes<SVGSVGElement> {
-  icon: keyof typeof icons;
+export const icons = {
+  ...lucideIcons,
+};
+
+export type IconTypes = keyof typeof icons;
+
+interface IconProps extends Omit<LucideProps, "ref"> {
+  icon: IconTypes;
   label?: string;
 }
 
 const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const { icon, label, ...rest } = props;
-
   const IconEle = icons[icon];
 
   return (
     <React.Fragment>
-      <IconEle ref={ref} width={16} height={16} {...rest} />
+      <IconEle ref={ref} aria-hidden={true} focusable={false} {...rest} />
       {label && (
         <VisuallyHiddenPrimitive.Root>{label}</VisuallyHiddenPrimitive.Root>
       )}
@@ -24,4 +29,4 @@ const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 
 Icon.displayName = "Icon";
 
-export { Icon };
+export default Icon;

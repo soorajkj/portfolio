@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
+
 import React, { forwardRef } from "react";
 import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
-import { icons as lucideIcons, LucideProps } from "lucide-react";
+import { icons as lucideIcons } from "lucide-react";
 
 export const icons = {
   ...lucideIcons,
@@ -8,7 +10,7 @@ export const icons = {
 
 export type IconTypes = keyof typeof icons;
 
-interface IconProps extends Omit<LucideProps, "ref"> {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
   icon: IconTypes;
   label?: string;
 }
@@ -16,6 +18,11 @@ interface IconProps extends Omit<LucideProps, "ref"> {
 const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const { icon, label, ...rest } = props;
   const IconEle = icons[icon];
+
+  if (!IconEle) {
+    console.warn(`Icon "${icon}" does not exist in the icon libraries.`);
+    return null;
+  }
 
   return (
     <React.Fragment>

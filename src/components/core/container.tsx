@@ -19,8 +19,8 @@ export default function Container(props: ContainerProps) {
 const ContainerStyles = cva([
   "container",
   "relative",
-  "max-w-screen-2xl",
-  "w-full",
-  "px-4",
   "mx-auto",
+  "w-full",
+  "max-w-screen-lg",
+  "px-4",
 ]);

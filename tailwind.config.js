@@ -5,9 +5,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      "family-montserrat": "var(--font-family-montserrat)",
-      "family-roboto-mono": "var(--font-family-roboto-mono)",
-      "family-bebas-neue": "var(--font-family-bebas-neue)",
+      "family-manrope": "var(--font-family-manrope)",
+      "family-roboto-pt-mono": "var(--font-family-pt-mono)",
     },
     future: {
       hoverOnlyWhenSupported: true,

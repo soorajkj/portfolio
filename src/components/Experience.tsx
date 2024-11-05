@@ -3,13 +3,13 @@ import Container from "@/components/core/container";
 
 export default function Experience() {
   return (
-    <section>
+    <section id="#experience">
       <Container>
         <div className="border-b border-neutral-900 py-24">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-6">
-              <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold text-transparent">
-                We care deeply about the quality of our work
+              <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold leading-tight text-transparent">
+                Overview of my professional experience and career progression
               </h2>
             </div>
             <div className="col-span-6">
@@ -29,14 +29,14 @@ export default function Experience() {
                 key={i}
                 className="group grid grid-cols-12 gap-8 pb-12 last:pb-0"
               >
-                <div className="relative z-10 lg:col-span-6">
+                <div className="relative z-10 col-span-12 lg:col-span-6">
                   <div className="lg:sticky lg:top-24">
-                    <p className="flex justify-end whitespace-nowrap pr-8 text-sm text-neutral-400">
+                    <p className="flex whitespace-nowrap pr-8 text-sm text-neutral-400 lg:justify-end">
                       October 24, 2024
                     </p>
                   </div>
                 </div>
-                <div className="relative lg:col-span-6">
+                <div className="relative col-span-12 lg:col-span-6">
                   <h3 className="mb-1.5 text-base font-semibold text-white">
                     Junior Frontend Developer
                   </h3>
@@ -46,7 +46,7 @@ export default function Experience() {
                       <p>Kochi, India</p>
                     </div>
                   </div>
-                  <div className="text-neutral-400">
+                  <div className="max-w-screen-sm text-neutral-400">
                     <ul className="list-outside space-y-2 text-sm">
                       <li>
                         Deliver high-quality, robust production code for a

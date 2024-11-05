@@ -3,14 +3,14 @@ import Container from "@/components/core/container";
 
 export default function About() {
   return (
-    <section className="relative overflow-hidden">
+    <section id="#about" className="relative overflow-hidden">
       <Container>
         <div className="border-b border-neutral-900 py-24">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-6">
-              <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold text-transparent">
-                We’re crafting the project planning tool for teams that care
-                about quality
+              <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold leading-tight text-transparent">
+                I build high-quality solutions for the web, focusing on
+                performance and precision.
               </h2>
             </div>
             <div className="col-span-6 max-w-lg space-y-4 text-sm leading-relaxed text-neutral-400">

@@ -3,8 +3,10 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "editor.colorDecorators": false,
-  "css.validate": false,
   "editor.wordWrap": "wordWrapColumn",
+  "git.decorations.enabled": false,
+  "scm.diffDecorationsGutterVisibility": "hover",
+  "css.validate": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "tailwindCSS.experimental.classRegex": [

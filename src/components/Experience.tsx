@@ -25,13 +25,10 @@ export default function Experience() {
           </div>
           <div className="relative mt-24">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div
-                key={i}
-                className="group grid grid-cols-12 gap-8 pb-12 last:pb-0"
-              >
-                <div className="relative z-10 col-span-12 lg:col-span-6">
-                  <div className="lg:sticky lg:top-24">
-                    <p className="flex whitespace-nowrap pr-8 text-sm text-neutral-400 lg:justify-end">
+              <div key={i} className="grid grid-cols-12 gap-8 pb-12 last:pb-0">
+                <div className="relative col-span-12 grid lg:col-span-6">
+                  <div className="sticky top-12 self-start">
+                    <p className="flex whitespace-nowrap text-sm text-neutral-400 lg:justify-end">
                       October 24, 2024
                     </p>
                   </div>

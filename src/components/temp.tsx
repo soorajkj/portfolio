@@ -1,3 +1,7 @@
+"use client";
+
+import React from "react";
+
 export default function Temp() {
-  return <section className=""></section>;
+  return <div></div>;
 }

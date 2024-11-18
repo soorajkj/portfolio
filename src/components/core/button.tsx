@@ -64,11 +64,11 @@ export const ButtonStyles = cva(
     variants: {
       variant: {
         primary: [
-          "bg-indigo-600",
-          "text-neutral-50",
-          "border-indigo-600",
-          "hover:bg-indigo-700",
-          "hover:border-indigo-700",
+          "bg-white",
+          "text-neutral-900",
+          "border-white",
+          "hover:bg-neutral-50",
+          "hover:border-neutral-50",
         ],
         secondary: [
           "bg-green-100",

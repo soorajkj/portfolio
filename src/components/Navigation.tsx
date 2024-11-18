@@ -21,7 +21,7 @@ const menu: Menu[] = [
 
 export default function Navigation() {
   return (
-    <nav className="relative">
+    <nav className="relative hidden">
       <Dock.DockRoot magnification={64} distance={100}>
         {menu.map(({ id, label, icon }, i) => (
           <Dock.DockItem key={i} size={46}>

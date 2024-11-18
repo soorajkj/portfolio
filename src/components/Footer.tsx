@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
       <Container>
-        <div className="py-24"></div>
+        <div className="py-0"></div>
       </Container>
     </footer>
   );

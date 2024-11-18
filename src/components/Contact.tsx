@@ -8,7 +8,7 @@ export default function Contacts() {
       <Container>
         <div className="py-24">
           <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6">
               <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold leading-tight text-transparent">
                 Get In Touch
               </h2>
@@ -18,7 +18,7 @@ export default function Contacts() {
                 to say hi, I’ll try my best to get back to you!
               </p>
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6">
               <ContactForm />
             </div>
           </div>

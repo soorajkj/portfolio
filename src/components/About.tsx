@@ -1,5 +1,6 @@
 import * as React from "react";
 import Container from "@/components/core/container";
+import Contribution from "@/components/Contribution";
 
 export default function About() {
   return (
@@ -7,13 +8,13 @@ export default function About() {
       <Container>
         <div className="border-b border-neutral-900 py-24">
           <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6">
               <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold leading-tight text-transparent">
                 I build high-quality solutions for the web, focusing on
                 performance and precision.
               </h2>
             </div>
-            <div className="col-span-6 max-w-lg space-y-4 text-sm leading-relaxed text-neutral-400">
+            <div className="col-span-12 max-w-lg space-y-4 text-sm leading-relaxed text-neutral-400 md:col-span-6">
               <p>
                 Hello! My name is{" "}
                 <b className="text-neutral-300">Sooraj Janardhanan</b> and I
@@ -35,6 +36,7 @@ export default function About() {
               </p>
             </div>
           </div>
+          <Contribution />
         </div>
       </Container>
     </section>

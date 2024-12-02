@@ -1,13 +1,14 @@
 "use client";
 
 import React, { PropsWithChildren, useRef } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { classnames } from "@/utils/classnames";
 
 const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
-export interface DockProps {
+export interface DockProps extends VariantProps<typeof DocStyles> {
   className?: string;
   magnification?: number;
   distance?: number;
@@ -46,21 +47,7 @@ const DockRoot = React.forwardRef<HTMLDivElement, DockProps>((props, ref) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       {...rest}
-      className={classnames([
-        "mx-auto",
-        "flex",
-        "items-end",
-        "h-16",
-        "rounded-2xl",
-        "gap-2",
-        "bg-black/20",
-        "border",
-        "border-white/10",
-        "p-2",
-        "backdrop-blur-md",
-        direction,
-        className,
-      ])}
+      className={classnames(DocStyles({ direction, className }))}
     >
       {renderChildren()}
     </motion.div>
@@ -77,16 +64,15 @@ export interface DockItemProps {
   props?: PropsWithChildren;
 }
 
-const DockItem = (props: DockItemProps) => {
-  const {
-    size = 40,
-    magnification = DEFAULT_MAGNIFICATION,
-    distance = DEFAULT_DISTANCE,
-    mouseX,
-    className,
-    children,
-    ...rest
-  } = props;
+const DockItem = ({
+  size = 40,
+  magnification = DEFAULT_MAGNIFICATION,
+  distance = DEFAULT_DISTANCE,
+  mouseX,
+  className,
+  children,
+  ...props
+}: DockItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const distanceCalc = useTransform(mouseX, (val: number) => {
@@ -111,31 +97,23 @@ const DockItem = (props: DockItemProps) => {
     <motion.div
       ref={ref}
       style={{ width }}
-      className={classnames(
-        [
-          "flex",
-          "aspect-square",
-          "cursor-pointer",
-          "items-center",
-          "justify-center",
-          "rounded-xl",
-          "border",
-          "border-white/5",
-          "bg-white/10",
-          "bg-gradient-to-t",
-          "from-white/5",
-          "via-white/5",
-          "to-white/10",
-          "backdrop-blur-md",
-        ],
-        className
-      )}
-      {...rest}
+      className={classnames("aspect-square", className)}
+      {...props}
     >
       {children}
     </motion.div>
   );
 };
+
+const DocStyles = cva(["flex", "gap-2", "p-2"], {
+  variants: {
+    direction: {
+      middle: "items-center",
+      top: "items-start",
+      bottom: "items-end",
+    },
+  },
+});
 
 DockRoot.displayName = "DockRoot";
 DockItem.displayName = "DockItem";

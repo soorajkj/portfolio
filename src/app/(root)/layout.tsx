@@ -7,7 +7,7 @@ export default function Layout(props: LayoutProps) {
   const { children } = props;
 
   return (
-    <div className="flex h-full flex-1 flex-col">
+    <div className="relative flex h-full flex-1 flex-col">
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />

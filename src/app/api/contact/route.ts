@@ -14,13 +14,14 @@ export async function POST(req: Request) {
       return Response.json({ error: err }, { status: 400 });
     }
 
-    const { email, fullname, company, message } = validatedFields.data;
+    const { email, firstname, lastname, company, message } =
+      validatedFields.data;
 
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: ["soorajkj46@gmail.com"],
       subject: "Hello world",
-      react: ContactEmail({ email, fullname, company, message }),
+      react: ContactEmail({ email, firstname, lastname, company, message }),
     });
 
     if (error) {

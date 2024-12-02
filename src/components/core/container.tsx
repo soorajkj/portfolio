@@ -21,6 +21,6 @@ const ContainerStyles = cva([
   "relative",
   "mx-auto",
   "w-full",
-  "max-w-screen-lg",
+  "max-w-screen-xl",
   "px-6",
 ]);

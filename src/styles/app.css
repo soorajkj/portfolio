@@ -5,3 +5,112 @@
 .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #0d0d0d;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  background-clip: padding-box;
+  border: 3px solid hsla(0, 0%, 100%, 0.3);
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.button--sec {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  cursor: pointer;
+  background: #07080a;
+  background-clip: padding-box;
+  border: 1 solid transparent;
+  border-radius: 8px;
+}
+
+.scroll {
+  border-color: hsl(210deg 2.08% 18.82%);
+  background: radial-gradient(
+    1139.98% 138.18% at 0 0,
+    hsla(0, 0%, 100%, 0.1) 0,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+}
+
+.scroll:hover {
+  color: hsl(0deg 0% 100%);
+  background: radial-gradient(
+    79.21% 79.21% at 42.35% 0,
+    hsl(0deg 0% 47.06%) 0,
+    hsl(0deg 0% 15.69%) 100%
+  );
+}
+
+.scroll.active {
+  color: hsl(0deg 0% 100%);
+  background: radial-gradient(
+    79.21% 79.21% at 42.35% 0,
+    hsl(0deg 0% 47.06%) 0,
+    hsl(0deg 0% 15.69%) 100%
+  );
+}
+
+.project.project-1 {
+  background: radial-gradient(
+    84.35% 70.19% at 50% 38.11%,
+    rgba(4, 62, 150, 0.7),
+    rgba(16, 0, 43, 0.16)
+  );
+}
+
+.project.project-2 {
+  background: radial-gradient(
+    84.35% 70.19% at 50% 38.11%,
+    rgba(2, 96, 101, 0.57),
+    rgba(5, 136, 178, 0.06)
+  );
+}
+
+.project.project-3 {
+  background: radial-gradient(
+    99.74% 100% at 50% 0%,
+    rgba(74, 21, 75, 0.7),
+    rgba(29, 5, 29, 0.42)
+  );
+}
+
+.project.project-4 {
+  background: radial-gradient(
+    99.74% 100% at 50% 0%,
+    rgba(84, 95, 102, 0.7),
+    rgba(0, 36, 69, 0.13)
+  );
+}
+
+.project.project-5 {
+  background: radial-gradient(
+    99.74% 100% at 50% 0%,
+    rgba(82, 48, 145, 0.7),
+    rgba(26, 11, 51, 0.14)
+  );
+}
+
+.project.project-6 {
+  background: radial-gradient(
+    84.35% 70.19% at 50% 38.11%,
+    rgba(3, 91, 155, 0.7),
+    rgba(0, 69, 150, 0.03)
+  );
+}

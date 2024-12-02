@@ -17,7 +17,13 @@ export default function ContactForm() {
   const form = useForm<ContactSchema>({
     resolver: zodResolver(contactSchema),
     mode: "all",
-    defaultValues: { fullname: "", email: "", company: "", message: "" },
+    defaultValues: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      company: "",
+      message: "",
+    },
   });
 
   const handleFormSubmit = (_formData: ContactSchema) => {
@@ -29,34 +35,58 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="overflow-hidden rounded-xl bg-neutral-900">
-      <div className="border-b border-neutral-800 px-8 py-4">
-        <h4 className="font-semibold">Tell me how I can help</h4>
+    <div className="mx-auto w-full max-w-md overflow-hidden rounded-xl bg-zinc-900/60">
+      <div className="border-b border-white/5 px-6 py-4">
+        <h4 className="font-medium">Tell me how I can help</h4>
       </div>
-      <div className="px-8 py-6">
+      <div className="px-6 py-6">
         <Form.FormRoot {...form}>
           <form
             className="space-y-6"
             onSubmit={form.handleSubmit(handleFormSubmit)}
           >
-            <Form.FormField
-              control={form.control}
-              name="fullname"
-              render={({ field }) => (
-                <Form.FormItem className="flex flex-col">
-                  <Form.FormLabel className="order-1">Full Name</Form.FormLabel>
-                  <Form.FormMessage className="order-3" />
-                  <Form.FormControl className="order-2">
-                    <Input
-                      type="text"
-                      placeholder="Kevin Flynn"
-                      autoComplete="off"
-                      {...field}
-                    />
-                  </Form.FormControl>
-                </Form.FormItem>
-              )}
-            />
+            <div className="flex flex-1 gap-4">
+              <Form.FormField
+                control={form.control}
+                name="firstname"
+                render={({ field }) => (
+                  <Form.FormItem className="flex flex-1 flex-col">
+                    <Form.FormLabel className="order-1">
+                      First Name
+                    </Form.FormLabel>
+                    <Form.FormMessage className="order-3" />
+                    <Form.FormControl className="order-2">
+                      <Input
+                        type="text"
+                        placeholder="Kevin"
+                        autoComplete="off"
+                        {...field}
+                      />
+                    </Form.FormControl>
+                  </Form.FormItem>
+                )}
+              />
+              <Form.FormField
+                control={form.control}
+                name="lastname"
+                render={({ field }) => (
+                  <Form.FormItem className="flex flex-1 flex-col">
+                    <Form.FormLabel className="order-1">
+                      Last Name
+                    </Form.FormLabel>
+                    <Form.FormMessage className="order-3" />
+                    <Form.FormControl className="order-2">
+                      <Input
+                        type="text"
+                        placeholder="Flynn"
+                        autoComplete="off"
+                        {...field}
+                      />
+                    </Form.FormControl>
+                  </Form.FormItem>
+                )}
+              />
+            </div>
             <Form.FormField
               control={form.control}
               name="email"
@@ -113,19 +143,14 @@ export default function ContactForm() {
                 </Form.FormItem>
               )}
             />
-            <div className="flex items-center gap-2">
-              <p className="flex-1 text-xs text-neutral-500">
-                You can also email me at{" "}
-                <a
-                  href="mailto:soorajkj46@gmail.com"
-                  rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-50"
-                >
-                  soorajkj46@gmail.com
-                </a>
-              </p>
-              <Button type="submit" disabled={isPending}>
-                Send Message
+            <div className="flex items-center justify-end gap-4">
+              <Button
+                type="submit"
+                variant="secondary"
+                disabled={isPending}
+                className="w-full"
+              >
+                <span>Send Message</span>
               </Button>
             </div>
           </form>

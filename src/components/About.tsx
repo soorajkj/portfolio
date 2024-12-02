@@ -1,42 +1,19 @@
+"use client";
+
 import * as React from "react";
 import Container from "@/components/core/container";
-import Contribution from "@/components/Contribution";
+import Readme from "@/components/Readme";
 
 export default function About() {
   return (
     <section id="#about" className="relative overflow-hidden">
       <Container>
-        <div className="border-b border-neutral-900 py-24">
+        <div className="py-24">
           <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-6">
-              <h2 className="bg-gradient-to-b from-neutral-50 via-neutral-300 to-neutral-400 bg-clip-text text-4xl font-semibold leading-tight text-transparent">
-                I build high-quality solutions for the web, focusing on
-                performance and precision.
-              </h2>
-            </div>
-            <div className="col-span-12 max-w-lg space-y-4 text-sm leading-relaxed text-neutral-400 md:col-span-6">
-              <p>
-                Hello! My name is{" "}
-                <b className="text-neutral-300">Sooraj Janardhanan</b> and I
-                enjoy creating things that live on the internet. My interest in
-                web development started back in 2012 when I decided to try
-                editing custom Tumblr themes — turns out hacking together a
-                custom reblog button taught me a lot about HTML & CSS!
-              </p>
-              <p>
-                Fast-forward to today, and I’ve had the privilege of working at
-                an advertising agency, a start-up, a huge corporation, and a
-                student-led design studio. My main focus these days is building
-                accessible, inclusive products and digital experiences at
-                Upstatement for a variety of clients.
-              </p>
-              <p>
-                I also recently launched a course that covers everything you
-                need to build a web app with the Spotify API using Node & React.
-              </p>
+            <div className="col-span-12">
+              <Readme />
             </div>
           </div>
-          <Contribution />
         </div>
       </Container>
     </section>

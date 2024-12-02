@@ -29,9 +29,10 @@ export default Label;
 
 const LabelStyles = cva([
   "inline-block",
+  "text-zinc-400",
   "text-sm",
+  "font-medium",
   "leading-none",
-  "text-neutral-500",
   "peer-disabled:cursor-not-allowed",
   "peer-disabled:opacity-70",
 ]);

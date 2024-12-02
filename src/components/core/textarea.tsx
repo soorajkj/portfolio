@@ -20,19 +20,23 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
 const TextareaStyles = cva([
   "flex",
-  "min-h-20",
+  "h-full",
+  "max-h-24",
   "w-full",
   "rounded-lg",
   "border",
-  "border-neutral-800/50",
-  "bg-white/5",
-  "px-4",
+  "border-zinc-600/50",
+  "bg-zinc-900",
+  "px-2",
   "py-2",
-  "text-sm",
-  "placeholder:text-white/30",
+  "text-base",
+  "text-white",
+  "placeholder:text-sm",
+  "placeholder:text-zinc-400/50",
   "focus-visible:outline-none",
   "disabled:cursor-not-allowed",
   "disabled:opacity-50",
+  "resize-none",
 ]);
 
 Textarea.displayName = "Textarea";

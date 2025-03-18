@@ -48,13 +48,13 @@ export const ButtonStyles = cva(
     "items-center",
     "space-x-1",
     "justify-center",
-    "rounded-lg",
+    "rounded-xl",
     "px-4",
     "py-2",
-    "h-9",
+    "h-11",
     "border",
     "border-transparent",
-    "text-sm",
+    "text-base",
     "font-medium",
     "leading-none",
     "disabled:opacity-80",
@@ -62,21 +62,8 @@ export const ButtonStyles = cva(
   {
     variants: {
       variant: {
-        primary: [
-          "bg-gradient-to-b",
-          "from-transparent",
-          "to-zinc-900/20",
-          "bg-zinc-950/20",
-          "text-white",
-          "border-t-white/10",
-          "hover:bg-zinc-800",
-        ],
-        secondary: [
-          "bg-white",
-          "text-neutral-950",
-          "border-t-white/10",
-          "hover:bg-white",
-        ],
+        primary: ["bg-neutral-800 text-white"],
+        secondary: ["bg-orange-600 text-white"],
       },
     },
   }

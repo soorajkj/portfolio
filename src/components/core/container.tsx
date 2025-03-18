@@ -10,7 +10,11 @@ export default function Container(props: ContainerProps) {
   const { children, className, ...rest } = props;
 
   return (
-    <div className={classnames(ContainerStyles({ className }))} {...rest}>
+    <div
+      className={classnames(ContainerStyles({ className }))}
+      style={{ maxWidth: "1140px" }}
+      {...rest}
+    >
       {children}
     </div>
   );
@@ -21,6 +25,5 @@ const ContainerStyles = cva([
   "relative",
   "mx-auto",
   "w-full",
-  "max-w-screen-xl",
   "px-6",
 ]);

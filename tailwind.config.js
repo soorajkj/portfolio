@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       "family-manrope": "var(--font-family-manrope)",
       "family-roboto-pt-mono": "var(--font-family-pt-mono)",
+      "family-bebas": "var(--font-family-bebas)",
     },
     future: {
       hoverOnlyWhenSupported: true,

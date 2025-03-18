@@ -3,7 +3,7 @@
 import * as React from "react";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
 import type { ThemeProviderProps } from "next-themes/dist/types";
-import { manrope, ptMono } from "@/lib/fonts";
+import { bebas, manrope, ptMono } from "@/lib/fonts";
 
 export default function ThemeProvider(props: ThemeProviderProps) {
   const { children, ...rest } = props;
@@ -14,6 +14,7 @@ export default function ThemeProvider(props: ThemeProviderProps) {
         :root {
           --font-family-manrope: ${manrope.style.fontFamily};
           --font-family-pt-mono: ${ptMono.style.fontFamily};
+          --font-family-bebas: ${bebas.style.fontFamily};
         }
       `}</style>
       <NextThemeProvider disableTransitionOnChange {...rest}>

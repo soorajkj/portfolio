@@ -10,18 +10,17 @@ export async function POST(req: Request) {
     const validatedFields = contactSchema.safeParse(formData);
 
     if (!validatedFields.success) {
-      const err = validatedFields.error.errors[0].message;
-      return Response.json({ error: err }, { status: 400 });
+      const error = validatedFields.error.errors[0].message;
+      return Response.json({ error }, { status: 400 });
     }
 
-    const { email, firstname, lastname, company, message } =
-      validatedFields.data;
+    const { email, firstname, company, message } = validatedFields.data;
 
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: ["soorajkj46@gmail.com"],
       subject: "Hello world",
-      react: ContactEmail({ email, firstname, lastname, company, message }),
+      react: ContactEmail({ email, firstname, company, message }),
     });
 
     if (error) {

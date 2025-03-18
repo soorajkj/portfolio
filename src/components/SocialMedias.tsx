@@ -10,23 +10,23 @@ interface Media {
 const arr: Media[] = [
   {
     label: "Twitter",
-    icon: "TwitterIcon",
+    icon: "Twitter",
   },
   {
     label: "Instagram",
-    icon: "InstagramIcon",
+    icon: "Instagram",
   },
   {
     label: "Github",
-    icon: "GithubIcon",
+    icon: "Github",
   },
   {
     label: "LinkedIn",
-    icon: "Linkedin01Icon",
+    icon: "Linkedin",
   },
   {
     label: "LinkedIn",
-    icon: "YoutubeIcon",
+    icon: "Youtube",
   },
 ];
 

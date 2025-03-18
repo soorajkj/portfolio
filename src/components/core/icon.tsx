@@ -2,9 +2,8 @@
 
 import React, { forwardRef } from "react";
 import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
-import { icons as HugeIcons } from "hugeicons-react";
+import { icons as lucidIcons } from "lucide-react";
 import BigsurfDocs from "public/icons/bigsurf/docs.svg";
-//
 import BigsurfMessage from "public/icons/bigsurf/message.svg";
 import BigsurfNotes from "public/icons/bigsurf/notes.svg";
 import BigsurfPhotos from "public/icons/bigsurf/photos.svg";
@@ -38,7 +37,7 @@ import DEVVisualStudioCode from "public/icons/developer/vscode.svg";
 import DEVWebpack from "public/icons/developer/webpack.svg";
 
 export const icons = {
-  ...HugeIcons,
+  ...lucidIcons,
   DEVBootstrap5,
   DEVHTML5,
   DEVCSS3,

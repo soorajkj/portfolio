@@ -2,7 +2,6 @@ import { z } from "zod";
 
 export const contactSchema = z.object({
   firstname: z.string().min(1, "Firstname is required").max(25),
-  lastname: z.string().min(1, "Lastname is required").max(25),
   email: z
     .string()
     .min(1, "Email is required")

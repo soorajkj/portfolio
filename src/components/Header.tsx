@@ -1,26 +1,11 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import * as FramerMotion from "framer-motion";
-import { Link } from "react-scroll";
 import Container from "@/components/core/container";
-import Icon, { IconTypes } from "@/components/core/icon";
-import Dock from "@/components/Dock";
-
-interface Menu {
-  icon: IconTypes;
-  label: string;
-  path: string;
-}
-
-const arr: Menu[] = [
-  { label: "Home", path: "#about", icon: "BigsurfNotes" },
-  { label: "Home", path: "#experience", icon: "BigsurfDocs" },
-  { label: "Home", path: "#portfolio", icon: "BigsurfPhotos" },
-  { label: "Home", path: "#contact", icon: "BigsurfMessage" },
-  { label: "Home", path: "#portfolio", icon: "BigsurfPhotos" },
-  { label: "Home", path: "#contact", icon: "BigsurfMessage" },
-];
+import Logo from "@/components/Logo";
+import Navigation from "@/components/Navigation";
 
 export default function Header() {
   const { scrollY } = FramerMotion.useScroll();
@@ -37,37 +22,27 @@ export default function Header() {
 
   return (
     <FramerMotion.AnimatePresence mode="wait">
-      <FramerMotion.motion.header
+      <FramerMotion.motion.div
         animate={isHidden ? "hidden" : "isHidden"}
         whileHover="isHidden"
         onFocusCapture={() => setIsHidden(false)}
-        variants={{ hidden: { y: "100%" }, isHidden: { y: "0%" } }}
-        transition={{ duration: 0.3 }}
-        className="fixed bottom-0 z-50 w-full justify-center py-4"
+        variants={{ hidden: { y: "-100%" }, isHidden: { y: "0%" } }}
+        transition={{ duration: 0.5 }}
+        className="sticky top-0 z-50 w-full py-4"
       >
         <Container>
-          <div className="flex items-center justify-center">
-            <div className="rounded-2xl border border-zinc-50/10 bg-zinc-50/10 bg-opacity-80 shadow shadow-zinc-950 backdrop-blur">
-              <Dock.DockRoot magnification={68} className="h-16">
-                {arr.map((_, i) => (
-                  <Dock.DockItem key={i} size={48}>
-                    <Link
-                      to={_.path}
-                      smooth={true}
-                      spy={true}
-                      duration={1000}
-                      className="scroll group flex h-full w-full cursor-pointer items-center justify-center rounded-xl border
-                      bg-clip-padding text-zinc-400 backdrop-blur-md transition-all duration-300"
-                    >
-                      <Icon icon={_.icon} className="size-full" />
-                    </Link>
-                  </Dock.DockItem>
-                ))}
-              </Dock.DockRoot>
+          <div className="flex h-16 items-center justify-between gap-4 rounded-xl bg-white px-6 shadow">
+            <div className="flex items-center gap-2.5 pr-3">
+              <Link className="focus:outline-none" href="/">
+                <div className="relative size-10 overflow-hidden rounded-full bg-black p-0.5 shadow-md">
+                  <Logo />
+                </div>
+              </Link>
             </div>
+            <Navigation />
           </div>
         </Container>
-      </FramerMotion.motion.header>
+      </FramerMotion.motion.div>
     </FramerMotion.AnimatePresence>
   );
 }

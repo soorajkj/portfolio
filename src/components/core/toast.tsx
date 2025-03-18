@@ -48,7 +48,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={classnames(
-      "ring-offset-background hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive inline-flex shrink-0 items-center justify-center rounded-md border border-zinc-900 bg-zinc-800 px-2 py-1 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+      "ring-offset-background hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive inline-flex shrink-0 items-center justify-center rounded-md border border-zinc-900 bg-zinc-800 px-2 py-1 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
       className
     )}
     {...props}
@@ -70,7 +70,7 @@ const ToastClose = React.forwardRef<
     toast-close=""
     {...props}
   >
-    <Icon icon="Cancel01Icon" className="h-4 w-4" />
+    <Icon icon="Cross" className="h-4 w-4" />
   </ToastPrimitives.Close>
 ));
 
@@ -82,7 +82,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={classnames("text-sm font-semibold", className)}
+    className={classnames("text-base font-semibold", className)}
     {...props}
   />
 ));
@@ -94,7 +94,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={classnames("text-xs opacity-90", className)}
+    className={classnames("text-sm opacity-90", className)}
     {...props}
   />
 ));

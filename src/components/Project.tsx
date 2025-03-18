@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import * as React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { classnames } from "@/utils/classnames";
@@ -10,15 +8,15 @@ interface ProjectProps
 
 export default function Project(props: ProjectProps) {
   const { className } = props;
+
   return (
     <div className={classnames(ProjectStyles({ className }))}>
-      <div className="flex flex-col-reverse items-start gap-2 rounded">
-        <div className="relative flex h-72 w-full items-center overflow-hidden">
-          <img src="/images/project-placeholder.webp" alt="" />
-        </div>
-        <div className="flex flex-col gap-2 p-6 pb-0 text-white">
-          <p className="text-xs">Typescript</p>
-          <h4 className="text-lg font-semibold text-white">
+      <div className="flex flex-col-reverse items-start gap-2">
+        <div className="flex flex-col items-start gap-2">
+          <span className="inline rounded border border-orange-500/20 bg-orange-500/10 px-1 py-0.5 text-sm font-medium leading-none text-orange-600">
+            Typescript
+          </span>
+          <h4 className="text-lg font-semibold text-neutral-700">
             Build a Spotify Connected App
           </h4>
           <div className="flex flex-col rounded-lg group-even:items-start">
@@ -28,7 +26,7 @@ export default function Project(props: ProjectProps) {
               information about each track. Create and save new playlists of
               recommended tracks based on your existing playlists and more.
             </p>
-            <div className="mt-4 flex flex-wrap items-center gap-4 font-family-roboto-pt-mono text-xs opacity-80">
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
               {["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"].map(
                 (_, i) => (
                   <div key={i}>{_}</div>
@@ -37,22 +35,20 @@ export default function Project(props: ProjectProps) {
             </div>
           </div>
         </div>
+        <div className="relative h-72 w-full">
+          <img
+            src="https://alignui.com/images/landing/template-thumbnails/hr-2.png"
+            alt=""
+            width="800"
+            height="600"
+            className="absolute inset-0 size-full"
+          />
+        </div>
       </div>
     </div>
   );
 }
 
 const ProjectStyles = cva([
-  "project",
-  "group",
-  "flex",
-  "cursor-pointer",
-  "flex-col",
-  "items-center",
-  "overflow-hidden",
-  "w-full",
-  "rounded-3xl",
-  "border",
-  "border-zinc-800/40",
-  "backdrop-blur-md",
+  "group flex cursor-pointer flex-col items-center w-full pb-6 rounded-xl bg-white p-6 shadow mb-1",
 ]);

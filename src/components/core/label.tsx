@@ -29,8 +29,8 @@ export default Label;
 
 const LabelStyles = cva([
   "inline-block",
-  "text-zinc-400",
-  "text-sm",
+  "text-neutral-700",
+  "text-base",
   "font-medium",
   "leading-none",
   "peer-disabled:cursor-not-allowed",

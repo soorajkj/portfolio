@@ -9,11 +9,7 @@ export default function About() {
     <section id="#about" className="relative overflow-hidden">
       <Container>
         <div className="py-24">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12">
-              <Readme />
-            </div>
-          </div>
+          <Readme />
         </div>
       </Container>
     </section>
